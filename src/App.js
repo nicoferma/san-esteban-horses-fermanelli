@@ -1,16 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from './components/NavigationBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Mi primera tienda de venta de articulos para caballos
-        </p>
-        
-      </header>
+      <NavigationBar />
+      <p>
+        Mi primera tienda de venta de articulos para caballos
+      </p>
     </div>
   );
 }
