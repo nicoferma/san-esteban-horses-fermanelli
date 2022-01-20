@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Row, Col, Card, Button, InputGroup, FormControl } from "react-bootstrap";
-import montura from "../images/monturapolo.jpeg"
 
 const ItemCount = ({ initial, stock }) => {
 
@@ -23,7 +22,7 @@ const ItemCount = ({ initial, stock }) => {
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>Montura de Polo</Card.Title>
-                    <Card.Img variant="top" src={montura} />
+                    <Card.Img variant="top" src="https://cdn.lamason.us/arandu.com.ar/media/2020/06/02174514/70002G.jpg" />
                     <Card.Text>
                         MONTURA DE POLO DE 19″ PULGADAS DE SUELA HB CONFECCIONADA EN SUELA DE ALTA CALIDAD
                     </Card.Text>
