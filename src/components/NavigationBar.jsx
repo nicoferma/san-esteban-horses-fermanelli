@@ -7,7 +7,7 @@ const NavigationBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand as={Link} to={"/"}><i className="fas fa-horse-head"></i> SAN ESTEBAN HORSES</Navbar.Brand>
+            <Navbar.Brand as={Link} to={"/"}><i className="fas fa-horse-head"></i> SAN ESTEBAN HORSES</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -20,6 +20,7 @@ const NavigationBar = () => {
                         <Nav.Link as={Link} to={"user"}><i className="fas fa-user"></i></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
+                
                 <Nav>
                     <CartWidget />
                 </Nav>
