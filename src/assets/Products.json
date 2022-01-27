@@ -4,7 +4,10 @@
         "title": "MONTURA DE POLO",
         "text": "Montura de polo de 19″ pulgadas de suele HB",
         "price": 45000,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02174517/70001H-600x600.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02174517/70001H-600x600.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02174518/70001G-1024x1024.jpg"
+        ],
         "stock": 12,
         "category": "polo"
     },
@@ -13,7 +16,12 @@
         "title": "BOTA DE POLO",
         "text": "Botas de polo marron, con ciere",
         "price": 55800,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2021/12/08204108/02042M_web-600x600.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2021/12/08204108/02042M_web-600x600.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2021/12/08204142/02042M-1_web-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2021/12/08204148/02042M-2_web-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2021/12/08204153/02042M-3_web-1024x1024.jpg"
+        ],
         "stock": 7,
         "category": "polo"
     },
@@ -22,7 +30,9 @@
         "title": "ESPUELINES",
         "text": "Espuelin de acero inoxidable",
         "price": 8750,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02183124/60536P-scaled-1-300x300.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02183124/60536P-scaled-1-300x300.jpg"
+        ],
         "stock": 18,
         "category": "polo"
     },
@@ -31,7 +41,9 @@
         "title": "LEVANTADOR BISAGRA",
         "text": "Filete levantador bisagra para polo",
         "price": 11200,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02174244/60521A-600x600.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02174244/60521A-600x600.jpg"
+        ],
         "stock": 15,
         "category": "polo"
     },
@@ -40,7 +52,10 @@
         "title": "CABEZADA DE POLO",
         "text": "Cabezada polo para pelham",
         "price": 7480,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02182257/70201GA-01-600x600.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02182257/70201GA-01-600x600.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2021/09/02162300/70201L-1024x1024.jpg"
+        ],
         "stock": 4,
         "category": "polo"
     },
@@ -49,7 +64,14 @@
         "title": "BOLSO DE CUERO",
         "text": "Bolso tubo de cuero viaje",
         "price": 32000,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173112/12730C-600x600.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173112/12730C-600x600.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173111/12730C-1-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173109/12730G-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173108/12730G1-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173107/12730N-1-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02165444/12730Sb.jpg"
+        ],
         "stock": 0,
         "category": "marroquineria"
     },
@@ -58,7 +80,13 @@
         "title": "MORRAL DE CUERO",
         "text": "Morral porta cartucho de cuero",
         "price": 27500,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02172808/22918O-600x600.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02172808/22918O-600x600.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02172807/22918O-2-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02172806/22918O-1-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02165508/22918D-1024x829.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02165507/22918DABIERTO-1024x847.jpg"
+        ],
         "stock": 2,
         "category": "marroquineria"
     },
@@ -67,7 +95,9 @@
         "title": "BOZAL CUERO BUFALO",
         "text": "Bozal cuero crudo de bufalo con argolla",
         "price": 5700,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02175824/60603S-1024x1024.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02175824/60603S-1024x1024.jpg"
+        ],
         "stock": 36,
         "category": "talabarteria"
     },
@@ -76,7 +106,10 @@
         "title": "CABRESTO DE CUERO",
         "text": "Cabresto simple de cuero crudo",
         "price": 2800,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2021/09/02162330/60606S-1024x1024.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2021/09/02162330/60606S-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02175820/60607C-1-1024x1024.jpg"
+        ],
         "stock": 25,
         "category": "talabarteria"
     },
@@ -85,7 +118,11 @@
         "title": "BOZAL DE NYLON",
         "text": "Bozal de nylon para potrillo con cabresto",
         "price": 1100,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2021/08/02162914/70203A_web-600x600.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2021/08/02162914/70203A_web-600x600.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2021/08/02162914/70203N_web-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2021/08/02162913/70203R_web-1024x1024.jpg"
+        ],
         "stock": 36,
         "category": "talabarteria"
     },
@@ -94,7 +131,11 @@
         "title": "BOZALEJO AMERICANO",
         "text": "Bozalejo americano para doma con riendas",
         "price": 20450,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02172902/80761C-1024x1024.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02172902/80761C-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02172900/80761C-1-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02172859/80761C-2-1024x1024.jpg"
+        ],
         "stock": 8,
         "category": "talabarteria"
     },
@@ -103,7 +144,10 @@
         "title": "AGENDA CARPINCHO",
         "text": "Agenda de carpincho con cierre",
         "price": 9870,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/10/02170320/10106CA-min-1024x853.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/10/02170320/10106CA-min-1024x853.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/10/02170327/10106GA-3-min-1024x683.jpg"
+        ],
         "stock": 12,
         "category": "marroquineria"
     },
@@ -112,7 +156,10 @@
         "title": "PORTAFOLIO DE CUERO",
         "text": "Portafolio de cuero con cierre",
         "price": 17600,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173527/12724S-600x600.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173527/12724S-600x600.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173526/12724S-1-1024x1024.jpg"
+        ],
         "stock": 4,
         "category": "marroquineria"
     },
@@ -121,7 +168,12 @@
         "title": "MALETIN LONA Y CUERO",
         "text": "Maletin finito de lona y cuero",
         "price": 11780,
-        "imageUrl": "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173203/12728C-600x600.jpg",
+        "imagesUrl": [
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173203/12728C-600x600.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173201/12728C-3-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173200/12728C-2-1024x1024.jpg",
+            "https://cdn.lamason.us/arandu.com.ar/media/2020/06/02173159/12728C-1-1024x1024.jpg"
+        ],
         "stock": 7,
         "category": "marroquineria"
     }

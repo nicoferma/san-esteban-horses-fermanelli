@@ -1,14 +1,14 @@
-import { Card } from "react-bootstrap";
-import ItemCount from "./ItemCount";
+import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
     // {id, title, text, price, imageUrl}
     return (
         <>
             <Card border="secondary" className="h-100">
-                <Card.Body className="d-flex flex-column">
+                <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
-                    <Card.Img variant="top" src={item.imageUrl} />
+                    <Card.Img variant="top" src={item.imagesUrl[0]} />
                     <Card.Text>
                         {item.text}
                     </Card.Text>
@@ -16,9 +16,9 @@ const Item = ({ item }) => {
                 </Card.Body>
                 <div className="m-4">
                     <Card.Text><strong>${item.price}</strong></Card.Text>
-                    <ItemCount initial={1} stock={item.stock} className="align-bottom" />
+                    
                 </div>
-
+                <Link to={`/${item.category}/${item.id}`}><Button variant="secondary" className="mt-2 input-block-level form-control">Ver detalles</Button></Link>
             </Card>
         </>
     );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import ItemList from "./ItemList";
-import { getProductsFromCategory } from "../services/Products";
+import { getProductsByCategory } from "../services/Products";
 
 const ItemListContainer = ({ filter }) => {
 
@@ -11,7 +11,7 @@ const ItemListContainer = ({ filter }) => {
     useEffect(() => {
         let mounted = true;
         setFinished(false);
-        getProductsFromCategory(filter).then(products => {
+        getProductsByCategory(filter).then(products => {
             if (mounted) {
                 setItems(products);
                 setFinished(true);
