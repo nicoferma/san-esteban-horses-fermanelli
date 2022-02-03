@@ -23,10 +23,12 @@ const ItemDetailContainer = () => {
     return (
         <>
             {finished ?
-                (typeof product == 'undefined' ?
-                    'El producto no existe'
-                    :
-                    <ItemDetail product={product} />)
+                (
+                    typeof product == 'undefined' ?
+                        'El producto no existe'
+                        :
+                        <ItemDetail product={product} />
+                )
                 :
                 'Cargando...'
             }

@@ -1,22 +1,22 @@
-import { Row, Col, Card, Container, Carousel } from "react-bootstrap";
+import { Row, Col, Card, Container, Button } from "react-bootstrap";
 import ItemCarouselImages from "./ItemCarouselImages";
 import ItemCount from "./ItemCount";
-import { Link } from 'react-router-dom'
-import { useEffect, useState } from "react";
-import { getProductsByCategory } from "../services/Products";
+import { useState, useContext } from "react";
+
+import { CartContext } from "../context/CartContext";
+import ItemCarouselCategory from "./ItemCarouselCategory";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ product }) => {
-  const [productsSuggestion, setProductSuggestion] = useState([]);
 
-  useEffect(() => {
-    let mounted = true;
-    getProductsByCategory(product.category).then(productsCategory => {
-      if (mounted) {
-        setProductSuggestion(productsCategory)
-      }
-    });
-    return () => mounted = false;
-  }, [product]);
+  const [isBuy, setIsBuy] = useState(false);
+  const { addProduct } = useContext(CartContext);
+
+
+  const addProductToCart = (quantity) => {
+    addProduct(product, quantity);
+    setIsBuy(true);
+  }
 
   return (
     <Container className="mt-5" style={{ textAlign: 'left' }}>
@@ -25,7 +25,6 @@ const ItemDetail = ({ product }) => {
           <Card className="mb-3" style={{ border: "0" }} >
             <Row >
               <Col xs={5}>
-
                 <ItemCarouselImages images={product.imagesUrl} />
               </Col>
               <Col xs={7}>
@@ -46,12 +45,17 @@ const ItemDetail = ({ product }) => {
 
                     </Col>
                     <Col xs={6} className="" >
-                      <ItemCount initial={1} stock={product.stock} />
-                      <Card.Text><small class="text-muted">Last updated 3 mins ago</small></Card.Text>
+                      <ItemCount initial={1} stock={product.stock} handleAddProduct={addProductToCart} />
+                      {isBuy ?
+                        <div>
+                          <Link to={'/cart'}><Button variant="secondary" className="mt-2 input-block-level form-control">Finalizar compra</Button></Link>
+                        </div>
+                        :
+                        null
+                      }
+                      <Card.Text><small className="text-muted">Last updated 3 mins ago</small></Card.Text>
                     </Col>
                   </Row>
-
-
                 </Card.Body>
               </Col>
             </Row>
@@ -60,29 +64,8 @@ const ItemDetail = ({ product }) => {
         <Col xs={2}>
           <Row>
             <Col xs={12}>
-              <Carousel indicators={false} variant="dark" fade>
-                {
-                  productsSuggestion.map(item => (
-
-                    <Carousel.Item>
-
-                      <Card className="h-100" style={{ border: "0" }}>
-                        <Card.Body>
-                          <Card.Title>{item.title}</Card.Title>
-                          <Card.Img variant="top" src={item.imagesUrl[0]} />
-                          <Card.Text >{item.text}</Card.Text>
-                          <Card.Text><strong>${item.price}</strong></Card.Text>
-                          <Link to={`/${item.category}/${item.id}`} className="text-secondary stretched-link"></Link>
-                        </Card.Body>
-
-                      </Card>
-                    </Carousel.Item>
-                  ))
-                }
-
-              </Carousel>
+              <ItemCarouselCategory category={product.category} />
             </Col>
-
           </Row>
         </Col>
       </Row >

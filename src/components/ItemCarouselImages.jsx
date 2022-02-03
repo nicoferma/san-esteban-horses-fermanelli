@@ -8,8 +8,8 @@ const ItemCarouselImages = ({ images }) => {
             controls={images.length === 1 ? false : true}
             interval={null}>
             {
-                images.map(image => (
-                    <Carousel.Item>
+                images.map((image, index) => (
+                    <Carousel.Item key={index}>
                         <img
                             className="d-block w-100"
                             src={image}

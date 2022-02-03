@@ -1,13 +1,9 @@
 import { useState } from "react";
 import { Badge, Row, Col, Button, InputGroup, FormControl } from "react-bootstrap";
 
-const ItemCount = ({ initial, stock }) => {
+const ItemCount = ({ initial, stock, handleAddProduct }) => {
 
     const [quantity, setQuantity] = useState(initial);
-
-    const onAddToCart = () => {
-
-    }
 
     const handleAdd = () => {
         if (quantity < stock) {
@@ -39,7 +35,7 @@ const ItemCount = ({ initial, stock }) => {
                             <Col></Col>
                         </Row>
                         <Badge pill bg="secondary" className="mt-2 input-block-level form-control">Disponibles: {stock}</Badge>
-                        <Button variant="secondary" className="mt-2 input-block-level form-control" onClick={onAddToCart}>Agregar al carrito</Button>
+                        <Button variant="secondary" className="mt-2 input-block-level form-control" onClick={() => handleAddProduct(quantity)}>Agregar al carrito</Button>
                     </>
                 )
                 :

@@ -1,5 +1,6 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { NavLink } from "react-router-dom"
+import { CartProvider } from '../context/CartContext';
 import CartWidget from './CartWidget';
 
 
@@ -7,7 +8,7 @@ const NavigationBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-            <Navbar.Brand as={NavLink} to={"/"}><i className="fas fa-horse-head"></i> SAN ESTEBAN HORSES</Navbar.Brand>
+                <Navbar.Brand as={NavLink} to={"/"}><i className="fas fa-horse-head"></i> SAN ESTEBAN HORSES</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -20,9 +21,12 @@ const NavigationBar = () => {
                         <Nav.Link as={NavLink} to={"user"}><i className="fas fa-user"></i></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-                
+
                 <Nav>
-                    <CartWidget />
+                    
+                        <CartWidget />
+                    
+
                 </Nav>
             </Container>
         </Navbar>
