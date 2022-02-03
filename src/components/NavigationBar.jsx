@@ -1,10 +1,10 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { NavLink } from "react-router-dom"
-import { CartProvider } from '../context/CartContext';
 import CartWidget from './CartWidget';
 
 
 const NavigationBar = () => {
+ 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
@@ -23,10 +23,7 @@ const NavigationBar = () => {
                 </Navbar.Collapse>
 
                 <Nav>
-                    
-                        <CartWidget />
-                    
-
+                    <CartWidget />
                 </Nav>
             </Container>
         </Navbar>
