@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Button, Overlay, Popover } from "react-bootstrap";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
 import ItemPopupCartDetailContainer from "./ItemPopupCartDetailContainer";
 

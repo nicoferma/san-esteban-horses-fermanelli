@@ -1,6 +1,6 @@
 import { useState, useRef, useContext } from "react";
 import { Badge, Button } from "react-bootstrap"
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../contexts/CartContext";
 import PopupCartDetail from "./PopupCartDetail";
 
 const CartWidget = () => {

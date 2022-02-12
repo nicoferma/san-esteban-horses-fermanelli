@@ -3,7 +3,7 @@ import ItemCarouselImages from "./ItemCarouselImages";
 import ItemCount from "./ItemCount";
 import { useState, useContext } from "react";
 
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../contexts/CartContext";
 import ItemCarouselCategory from "./ItemCarouselCategory";
 import { Link } from "react-router-dom";
 

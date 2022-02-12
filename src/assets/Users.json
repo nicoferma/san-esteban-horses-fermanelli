@@ -1,0 +1,14 @@
+[{
+    "id": 1,
+    "name": "Nicolas",
+    "lastname": "Fermanelli",
+    "username": "nferman",
+    "password": "surfing",
+    "mail": "nferman77@hotmail.com",
+    "phone": "2235304682",
+    "address": "Ascasubi 682",
+    "postalcode": "6450",
+    "city": "Pehuajo",
+    "province": "Buenos Aires",
+    "country": "Argentina"
+}]

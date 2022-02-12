@@ -10,7 +10,7 @@ import PageLogin from './pages/PageLogin';
 import PageCart from './pages/PageCart';
 import PageError from './pages/PageError';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import { CartProvider } from './context/CartContext';
+import { CartProvider } from './contexts/CartContext';
 
 
 const App = () => {
@@ -38,6 +38,7 @@ const App = () => {
             <Route path="cart" element={<PageCart />} />
 
             <Route path="login" element={<PageLogin />} />
+
             <Route path="*" element={<PageError />} />
           </Routes>
         </CartProvider>

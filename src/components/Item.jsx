@@ -1,5 +1,6 @@
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { getPriceFormat } from "../services/Utils";
 
 const Item = ({ item }) => {
     // {id, title, text, price, imageUrl}
@@ -15,7 +16,7 @@ const Item = ({ item }) => {
 
                 </Card.Body>
                 <div className="m-4">
-                    <Card.Text><strong>${item.price}</strong></Card.Text>
+                    <Card.Text><strong>{getPriceFormat(item.price)}</strong></Card.Text>
                     
                 </div>
                 <Link to={`/${item.category}/${item.id}`}><Button variant="secondary" className="mt-2 input-block-level form-control">Ver detalles</Button></Link>
