@@ -1,10 +1,20 @@
+import { useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { NavLink } from "react-router-dom"
 import CartWidget from './CartWidget';
+import { getAllCategories } from '../services/Products';
+import { useState } from 'react';
 
 
 const NavigationBar = () => {
- 
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        getAllCategories().then(categories => {
+            setCategories(categories);  
+        });
+    }, []);
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
@@ -12,10 +22,8 @@ const NavigationBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={NavLink} to={"marroquineria"}>Marroquineria</Nav.Link>
-                        <Nav.Link as={NavLink} to={"talabarteria"}>Talabarteria</Nav.Link>
-                        <Nav.Link as={NavLink} to={"polo"}>Polo</Nav.Link>
-                        <Nav.Link as={NavLink} to={"equitacion"}>Equitacion</Nav.Link>
+                        {categories.map(category => <Nav.Link key={category.id} as={NavLink} to={category.id}>{category.name}</Nav.Link>)}
+
                     </Nav>
                     <Nav>
                         <Nav.Link as={NavLink} to={"user"}><i className="fas fa-user"></i></Nav.Link>
