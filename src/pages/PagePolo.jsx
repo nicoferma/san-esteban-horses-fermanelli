@@ -2,10 +2,9 @@ import ItemListContainer from "../components/ItemListContainer";
 
 const PagePolo = () => {
     return (
-        <>
-            <h1>POLO</h1>
+        <div className="mt-4">
             <ItemListContainer filter="polo" />
-        </>
+        </div>
     );
 }
 

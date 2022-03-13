@@ -12,7 +12,6 @@ export const getAllProducts = async () => {
     });
 
   });
-  console.log(data)
   return data;
 }
 
@@ -28,7 +27,6 @@ export const getProductsByCategory = async (category) => {
     });
 
   });
-  console.log(data)
   return data;
 }
 
@@ -36,8 +34,7 @@ export const getProductById = async (id) => {
   const docRef = doc(db, "products", id);
   const docSnap = await getDoc(docRef);
 
-  console.log(docSnap.data())
-  return docSnap.data();
+  return { id: docSnap.id, ...docSnap.data() };
 }
 
 export const getAllCategories = async () => {
@@ -54,8 +51,6 @@ export const getAllCategories = async () => {
 }
 
 export const importFirestoreProducts = () => {
-  products.map(product => {
-    addDoc(collection(db, "products"), product).then(docRef => console.log(docRef.id))
-  })
+  products.map(product => addDoc(collection(db, "products"), product).then(docRef => console.log(docRef.id)));
 
 }

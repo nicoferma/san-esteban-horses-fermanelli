@@ -19,7 +19,6 @@ const ItemCount = ({ initial, stock, handleAddProduct }) => {
 
     return (
         <>
-
             {stock ?
                 (
                     <>
@@ -28,7 +27,7 @@ const ItemCount = ({ initial, stock, handleAddProduct }) => {
                             <Col xs={8}>
                                 <InputGroup size="sm">
                                     <Button variant="secondary" onClick={handleSubstract}>-</Button>
-                                    <FormControl type="text" className="text-center" value={stock ? quantity : 0} />
+                                    <FormControl type="text" readOnly className="text-center" value={stock ? quantity : 0} />
                                     <Button variant="secondary" onClick={handleAdd}>+</Button>
                                 </InputGroup>
                             </Col>

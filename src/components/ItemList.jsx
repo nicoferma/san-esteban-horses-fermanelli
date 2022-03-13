@@ -5,7 +5,7 @@ const ItemList = ({ items }) => {
 
     return (
         <>
-            {items.length > 0?
+            {items.length > 0 ?
 
                 <Row xs={2} md={4} className="g-4">
                     {items.map(item => (

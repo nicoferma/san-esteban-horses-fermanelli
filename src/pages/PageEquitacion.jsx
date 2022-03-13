@@ -2,10 +2,9 @@ import ItemListContainer from "../components/ItemListContainer";
 
 const PageEquitacion = () => {
     return (
-        <>
-            <h1>EQUITACION</h1>
+        <div className="mt-4">
             <ItemListContainer filter="equitacion" />
-        </>
+        </div>
     );
 }
 

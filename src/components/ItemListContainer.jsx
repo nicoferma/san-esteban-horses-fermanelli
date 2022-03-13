@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import ItemList from "./ItemList";
 import { getProductsByCategory, getAllProducts } from "../services/Products";
+import Loading from "./Loading";
 
 const ItemListContainer = ({ filter }) => {
 
@@ -36,7 +37,7 @@ const ItemListContainer = ({ filter }) => {
             <Container className="mb-5">
                 {finished ?
                     <ItemList items={items} /> :
-                    'Cargando...'
+                    <Loading />
                 }
 
             </Container>

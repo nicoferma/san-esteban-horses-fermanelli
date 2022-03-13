@@ -2,10 +2,9 @@ import ItemListContainer from "../components/ItemListContainer";
 
 const PageTalabarteria = () => {
     return (
-        <>
-            <h1>TALABARTERIA</h1>
+        <div className="mt-4">
             <ItemListContainer filter="talabarteria" />
-        </>
+        </div>
     );
 }
 

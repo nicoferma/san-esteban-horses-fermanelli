@@ -2,10 +2,9 @@ import ItemListContainer from '../components/ItemListContainer'
 
 const PageInicio = () => {
     return (
-        <>
-            <h1>INICIO</h1>
+        <div className="mt-4">
             <ItemListContainer filter="" />
-        </>
+        </div>
     );
 }
 

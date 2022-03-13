@@ -11,37 +11,57 @@ import PageCart from './pages/PageCart';
 import PageError from './pages/PageError';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { CartProvider } from './contexts/CartContext';
-
+import { AuthProvider } from './contexts/AuthContext';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import AddProduct from './components/AddProduct';
+import PageUser from './pages/PageUser';
+import PageOrders from './pages/PageOrders';
 
 const App = () => {
   return (
     <div className="App">
 
       <BrowserRouter>
-        <CartProvider>
-          <NavigationBar />
-          <Routes>
-            <Route path="/" element={<PageInicio />} />
+        <AuthProvider>
+          <CartProvider>
+            <NavigationBar />
+            <Routes>
+              <Route path="/" element={<PageInicio />} />
 
-            <Route path="/marroquineria" element={<PageMarroquineria />} />
-            <Route path='/marroquineria/:id' element={<ItemDetailContainer />} />
+              <Route path="/marroquineria" element={<PageMarroquineria />} />
+              <Route path='/marroquineria/:id' element={<ItemDetailContainer />} />
 
-            <Route path="talabarteria" element={<PageTalabarteria />} />
-            <Route path='/talabarteria/:id' element={<ItemDetailContainer />} />
+              <Route path="talabarteria" element={<PageTalabarteria />} />
+              <Route path='/talabarteria/:id' element={<ItemDetailContainer />} />
 
-            <Route path="polo" element={<PagePolo />} />
-            <Route path='/polo/:id' element={<ItemDetailContainer />} />
+              <Route path="polo" element={<PagePolo />} />
+              <Route path='/polo/:id' element={<ItemDetailContainer />} />
 
-            <Route path="equitacion" element={<PageEquitacion />} />
-            <Route path='/equitacion/:id' element={<ItemDetailContainer />} />
+              <Route path="equitacion" element={<PageEquitacion />} />
+              <Route path='/equitacion/:id' element={<ItemDetailContainer />} />
 
-            <Route path="cart" element={<PageCart />} />
+              <Route path="user" element={<PageUser />} />
 
-            <Route path="login" element={<PageLogin />} />
+              <Route path="cart" element={<PageCart />} />
 
-            <Route path="*" element={<PageError />} />
-          </Routes>
-        </CartProvider>
+              <Route path="add-product" element={
+                <ProtectedRoute>
+                  <AddProduct />
+                </ProtectedRoute>
+              } />
+
+              <Route path="orders" element={
+                <ProtectedRoute>
+                  <PageOrders />
+                </ProtectedRoute>
+              } />
+
+              <Route path="login" element={<PageLogin />} />
+
+              <Route path="*" element={<PageError />} />
+            </Routes>
+          </CartProvider>
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Row, Col, Card, Container, Button } from "react-bootstrap";
+import { Row, Col, Card, Container, Button, Badge } from "react-bootstrap";
 import ItemCarouselImages from "./ItemCarouselImages";
 import ItemCount from "./ItemCount";
 import { useState, useContext } from "react";
@@ -6,16 +6,23 @@ import { useState, useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import ItemCarouselCategory from "./ItemCarouselCategory";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const ItemDetail = ({ product }) => {
+  const { addProduct, cartProducts, getProductById } = useContext(CartContext);
+  const [cartProduct, setCartProduct] = useState(null);
 
-  const [isBuy, setIsBuy] = useState(false);
-  const { addProduct } = useContext(CartContext);
+  useEffect(() => {
+    setCartProduct(getProductById(product.id));
 
+
+  }, [product, cartProducts, getProductById]);
 
   const addProductToCart = (quantity) => {
+  
     addProduct(product, quantity);
-    setIsBuy(true);
+    setCartProduct(getProductById(product.id));
+    
   }
 
   return (
@@ -24,6 +31,12 @@ const ItemDetail = ({ product }) => {
         <Col xs={10}>
           <Card className="mb-3" style={{ border: "0" }} >
             <Row >
+              {cartProduct ?
+                <h3 style={{ position: 'absolute', zIndex: 100 }}><Badge bg="secondary">{ cartProduct.quantity }</Badge></h3>
+                :
+                null
+              }
+
               <Col xs={5}>
                 <ItemCarouselImages images={product.imagesUrl} />
               </Col>
@@ -46,7 +59,7 @@ const ItemDetail = ({ product }) => {
                     </Col>
                     <Col xs={6} className="" >
                       <ItemCount initial={1} stock={product.stock} handleAddProduct={addProductToCart} />
-                      {isBuy ?
+                      {cartProduct ?
                         <div>
                           <Link to={'/cart'}><Button variant="secondary" className="mt-2 input-block-level form-control">Finalizar compra</Button></Link>
                         </div>

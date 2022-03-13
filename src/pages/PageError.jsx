@@ -1,8 +1,10 @@
+import Error404 from "../components/Error404";
+
 const PageError = () => {
     return (
-        <>
-            <h1>NO EXISTE ESTA PAGINA</h1>
-        </>
+        <div className="m-0 vh-100 row justify-content-center align-items-center">
+            <Error404 />
+        </div>
     );
 }
 
