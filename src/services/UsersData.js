@@ -1,4 +1,4 @@
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 
 export const getUserData = async (id) => {
@@ -9,11 +9,10 @@ export const getUserData = async (id) => {
 }
 
 export const addUserData = async (id, userData) => {
-  await setDoc(doc(db, "users", id), userData);
-  return true;
+  return await setDoc(doc(db, "users", id), userData);
 }
 
 export const updateUserData = async (id, userData) => {
   const docRef = doc(db, "users", id);
-  await docRef.update(userData);
+  return await updateDoc(docRef, userData);
 }

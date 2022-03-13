@@ -1,4 +1,4 @@
-import { ListGroup, Row, Col, CloseButton, Badge } from "react-bootstrap"
+import { ListGroup, Row, Col, Badge } from "react-bootstrap"
 import { getStringFormatDate } from "../services/Utils"
 import { Link } from "react-router-dom"
 

@@ -35,6 +35,11 @@ export function AuthProvider({ children }) {
 
   const resetPassword = async (email) => sendPasswordResetEmail(auth, email);
 
+  const refreshUserData = async () => {
+    const userData = await getUserData(user.uid);
+    setUser({ uid: user.uid, email: user.email, ...userData });
+  }
+
   useEffect(() => {
     const unsubuscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -57,6 +62,7 @@ export function AuthProvider({ children }) {
         logout,
         loading,
         resetPassword,
+        refreshUserData
       }}
     >
       {children}

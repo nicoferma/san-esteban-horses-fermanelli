@@ -3,6 +3,7 @@ import { collection, getDocs, addDoc, doc, updateDoc } from "firebase/firestore"
 import db from "../firebase/firebaseConfig";
 import { useEffect, useState } from "react";
 import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import NavbarUser from "./NavbarUser";
 
 const AddProduct = () => {
   const [adding, setAdding] = useState(false);
@@ -123,46 +124,44 @@ const AddProduct = () => {
 
   return (
     <>
-      <Container>
-        <Form style={{ textAlign: 'left' }} className="mt-4" onSubmit={handleSubmit}>
-          <FloatingLabel controlId="floatingInput" label="Título" className="mb-3">
-            <Form.Control type="text" name="title" placeholder="Titulo del producto" />
-          </FloatingLabel>
+      <Form style={{ textAlign: 'left' }} className="mt-4" onSubmit={handleSubmit}>
+        <FloatingLabel controlId="floatingInput" label="Título" className="mb-3">
+          <Form.Control type="text" name="title" placeholder="Titulo del producto" />
+        </FloatingLabel>
 
-          <FloatingLabel controlId="floatingTextarea2" label="Información del producto" className="mb-3">
-            <Form.Control
-              name="text"
-              as="textarea"
-              placeholder="Información del producto"
-              style={{ height: '100px' }}
-            />
-          </FloatingLabel>
-          <FloatingLabel controlId="floatingPassword" label="Precio" className="mb-3">
-            <Form.Control type="text" name="price" placeholder="Precio" />
-          </FloatingLabel>
-          <FloatingLabel controlId="floatingPassword" label="Stock" className="mb-3">
-            <Form.Control type="text" name="stock" placeholder="Stock" />
-          </FloatingLabel>
+        <FloatingLabel controlId="floatingTextarea2" label="Información del producto" className="mb-3">
+          <Form.Control
+            name="text"
+            as="textarea"
+            placeholder="Información del producto"
+            style={{ height: '100px' }}
+          />
+        </FloatingLabel>
+        <FloatingLabel controlId="floatingPassword" label="Precio" className="mb-3">
+          <Form.Control type="text" name="price" placeholder="Precio" />
+        </FloatingLabel>
+        <FloatingLabel controlId="floatingPassword" label="Stock" className="mb-3">
+          <Form.Control type="text" name="stock" placeholder="Stock" />
+        </FloatingLabel>
 
-          <FloatingLabel controlId="floatingSelect" label="Categoria" className="mb-3">
-            <Form.Select name="category" aria-label="Cateogria">
-              {categories.map(category => <option value={category.id}>{category.name}</option>)}
-            </Form.Select>
-          </FloatingLabel>
+        <FloatingLabel controlId="floatingSelect" label="Categoria" className="mb-3">
+          <Form.Select name="category" aria-label="Cateogria">
+            {categories.map(category => <option value={category.id}>{category.name}</option>)}
+          </Form.Select>
+        </FloatingLabel>
 
 
-          <FloatingLabel controlId="floatingPassword" label="Selecciona las imágenes del producto" className="mb-3">
+        <FloatingLabel controlId="floatingPassword" label="Selecciona las imágenes del producto" className="mb-3">
 
-            <Form.Control type="file" accept="image/*" name="imagesUrl" onChange={handleChangeImage} multiple />
-          </FloatingLabel>
+          <Form.Control type="file" accept="image/*" name="imagesUrl" onChange={handleChangeImage} multiple />
+        </FloatingLabel>
 
-          <Button disabled={false} variant="secondary" type="submit" className="mt-2 input-block-level form-control">
-            {adding ? 'Cargando producto...' : 'Cargar producto'}
-          </Button>
-        </Form>
-        <Image src={imagePreview} className="mt-4" style={{ width: 100, height: 100 }} />
-        <ProgressBar now={progressImage} label={`${progressImage}%`} className="mt-4" />
-      </Container>
+        <Button disabled={false} variant="secondary" type="submit" className="mt-2 input-block-level form-control">
+          {adding ? 'Cargando producto...' : 'Cargar producto'}
+        </Button>
+      </Form>
+      <Image src={imagePreview} className="mt-4" style={{ width: 100, height: 100 }} />
+      <ProgressBar now={progressImage} label={`${progressImage}%`} className="mt-4" />
     </>
   );
 };

@@ -14,13 +14,16 @@ export const getAllOrders = async () => {
 }
 
 export const getOrdersByUserID = async (userID) => {
-    const ref = doc(db, "orders");
-    const q = query(collection(db, ref), where("uid", "==", {uid: userID}));
-
-    db.collection("orders")
+    const q = query(collection(db, "orders"), where("buyer.uid", "==", userID));
 
     const querySnapshot = await getDocs(q);
-    console.log(querySnapshot)
+    const data = [];
+    querySnapshot.forEach((doc) => {
+        data.push({
+            id: doc.id, ...doc.data()
+        });
+    });
+    return data;
 }
 
 export const addOrder = async (user, products, total) => {

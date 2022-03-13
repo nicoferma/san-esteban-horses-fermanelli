@@ -1,57 +1,69 @@
-import { Button, Row, Col, Container, Navbar } from "react-bootstrap"
+import { Button, Row, Col, Container, Navbar, ListGroup } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import User from "../components/User";
 import { getOrdersByUserID } from "../services/Orders";
+import { useEffect, useState } from "react";
+import { getStringFormatDate } from "../services/Utils";
+import NavbarUser from "../components/NavbarUser";
 
 const PageUser = () => {
-    const { user, loading, logout } = useAuth();
-    const navigate = useNavigate();
+    const { user, logout } = useAuth();
+    const [orders, setOrders] = useState([]);
 
-    const handleLogout = async () => {
-        try {
-            await logout();
-        } catch (error) {
-            console.error(error.message);
+
+    useEffect(() => {
+        let mounted = true;
+        if (user) {
+            getOrdersByUserID(user.uid).then(orders => {
+                if (mounted) setOrders(orders);
+            })
         }
-    };
-
-    const handleBtn = async () => {
-        await getOrdersByUserID(user.uid)
-    }
-
-    const handleAddProduct = () => {
-        navigate("/add-product")
-    }
-
-    const handleOrders= () => {
-        navigate("/orders")
-    }
+        return () => mounted = false;
+    }, []);
 
     if (!user) return <Navigate to="/login" />;
 
     return (
-        <Container className="mt-4">
-            <Row>
-                <Col xs={6}>
-                    <User />
-                </Col>
-                <Col xs={6}>
-                    <Button onClick={handleBtn}>traer orders de este usuario</Button>
-                </Col>
-            </Row>
-            <Navbar className="navbar fixed-bottom navbar-expand-sm navbar-dark bg-secondary">
-                <Container>
-                    {user.role > 0 &&
-                        <div>
-                            <Button variant="secondary" onClick={handleAddProduct}>Agregar producto</Button>
-                            <Button variant="secondary" onClick={handleOrders}>Ver ordenes</Button>
-                        </div>
-                    }
-                    <Button variant="secondary" onClick={handleLogout}>Logout</Button>
-                </Container>
-            </Navbar>
-        </Container>
+        <>
+            <Container className="mt-4">
+                <Row>
+                    <Col xs={6}>
+                        <User />
+                    </Col>
+                    <Col xs={6}>
+                        {orders.length ?
+                            <ListGroup variant="flush" className="">
+                                {
+                                    orders.map(order => (
+                                        <ListGroup.Item className="m-0 p-0">
+                                            <Row>
+                                                <Col xs={4}>
+                                                    {getStringFormatDate(new Date(order.date.seconds * 1000))}
+                                                </Col>
+                                                <Col xs={4}>
+                                                    {order.products.map(product => (
+                                                        <Link key={product.id} to={`/${product.category}/${product.id}`}>{product.title} - {product.quantity}</Link>
+                                                    ))}
+                                                </Col>
+                                                <Col xs={4}>
+                                                    <strong>${order.total}</strong>
+                                                </Col>
+                                            </Row>
+                                        </ListGroup.Item>
+                                    ))
+                                }
+
+                            </ListGroup>
+                            :
+                            <h3 className="text-secondary">No haz realizado compras.</h3>
+                        }
+                    </Col>
+                </Row>
+
+            </Container>
+            <NavbarUser />
+        </>
     )
 }
 

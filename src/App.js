@@ -13,9 +13,9 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { CartProvider } from './contexts/CartContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
-import AddProduct from './components/AddProduct';
 import PageUser from './pages/PageUser';
 import PageOrders from './pages/PageOrders';
+import PageAddProduct from './pages/PageAddProduct';
 
 const App = () => {
   return (
@@ -46,7 +46,7 @@ const App = () => {
 
               <Route path="add-product" element={
                 <ProtectedRoute>
-                  <AddProduct />
+                  <PageAddProduct />
                 </ProtectedRoute>
               } />
 
